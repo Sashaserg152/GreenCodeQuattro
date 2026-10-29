@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ошибка, эта страница ещё недоступна</title>
+    <link rel="stylesheet" href="Визуал.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active" style="display: flex; flex-direction: column; align-items: center;">
+            <h1>УПС. Кажется, здесь пока ничего нет.</h1>
+            <h3>Данные материалы появятся позже, в релизной версии.</h3><br>
+            <img src="img/Ndone.png" alt="Среда обитания исполнителя Черепаха." style="float: left; margin-right: 15px; margin-bottom: 10px; width: 380px;">
+        </section>
+ 
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина Александра
+    </footer>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+            
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+            
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+          
+        
+    window.onload = () => changePage('output');
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютерный исполнитель - CANVAS</title>
+    <link rel="stylesheet" href="Визуал.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active">
+            <h1>Компьютерный исполнитель <b><i>Canvas</i></b></h1>
+            <img src="img/cord_js.png" alt="Среда обитания исполнителя CANVAS." style="float: left; margin-right: 15px; margin-bottom: 10px; width: 400px;">
+            
+            <p> Технология HTML5 CANVAS предназначена для создания растровых графических изображений в окне браузера расширенными средствами языка JavaScript.</p>
+                <p>Среда обитания исполнителя <i>Canvas</i> — координатная плоскость, расположенная на странице браузера начиная. Начало отсчёта идёт с левого верхнего угла страницы (0;0). 
+                Для того, чтобы задать конкретный размер поля используется команда. После подключения системы координат 2D-контекста исходное положение — точка с координатами (500; 300), перо поднято. Размер окна Canvas при этих значения 1000 × 600.
+                первой плоскости. Размер окна Черепахи зависит от заданной учащимися при написании программы. </p>
+                <div class="code-block"><code><i>&#60;<span class="keyword">canvas</span> id=<span class="procedure">"canvas"</span> width=<span class="procedure">"500"</span> height=<span class="procedure">"300"</span>&#62; &#60;/<span class="keyword">canvas</span>&#62;</i></code></div>
+            <p>Для создания локальной системы координат необходимо подключить 2D-контекст</p>
+            <div class="code-block"><code><i>const canvas = document.getElementById(<span class="procedure">"canvas"</span>);<br>const context = canvas.getContext(<span class="procedure">"2d"</span>);</i></code></div>
+            <p>Перед тем, как перейти непосредственно к рисованию, стоит понимать, как устроена система координат в canvas:</p>
+
+            <div class="code-block" style="float: left; margin-right: 15px; margin-bottom: 10px; width: 550px;">
+                <table>
+                    <tr>
+                        <td>
+                            Команда
+                        </td>
+                        <td>
+                            Действия
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.beginPath()
+                        </td>
+                        <td>
+                            Начинает путь пера
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.moveTo()
+                        </td>
+                        <td>
+                            Перемещает поднятое перо                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.lineTo()
+                        </td>
+                        <td>
+                            Перемещает опущенное перо                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.stroke()
+                        </td>
+                        <td>
+                            Конец пути пера                            
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="code-block" style="float: left; margin-right: 15px; margin-bottom: 10px; width: 550px;">
+                <table>
+                    <tr>
+                        <td>
+                            Команда
+                        </td>
+                        <td>
+                            Действия
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.lineWidth()
+                        </td>
+                        <td>
+                            Толщина пера
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ctx.strokeStyle = "color"
+                        </td>
+                        <td>
+                            Изменение цвета пера                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            canv.width="х";
+                        </td>
+                        <td>
+                            Длина холста                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            canv.height="х"; 
+                        </td>
+                        <td>
+                            Высота холста                           
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>Для того чтобы Черепаха могла выполнять команды, первой командой в программе нужно подключить модуль, содержащий команды управления Черепахой: <code>import turtle</code> <br>
+            Каждая команда управления Черепахой записывается после ключевого слова turtle и отделяется от него точкой. Например:</p>
+            
+            
+            <div class="code-block">
+                <table>
+                    <tr>
+                        <td style="text-align: justify;">
+                            Код:
+                        </td>
+                        <td style="text-align: justify;">
+                            Программа:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width:80%; text-align: justify; font-size: 15px;">
+                            <code>
+                                &#60;!DOCTYPE html&#60;<br>
+                                &#60;<span class="procedure">html</span>&#60;<br>
+                                &#60;<span class="procedure">body</span>&#60;<br>
+                                &#60;<span class="procedure">canvas</span> <span class="number">id</span>="myCanvas" <span class="number">width</span>="300" <span class="number">height</span>="150"<br>
+                                <span class="number">style</span>="border:1px solid grey">&#60;/<span class="procedure">canvas</span>><br>
+                                &#60;<span class="procedure">script</span>><br>
+                                const c = document.getElementById("<span class="number">myCanvas</span>");<br>
+                                const ctx = c.getContext("<span class="number">2d</span>");<br>
+                                ctx.beginPath();<br>
+                                ctx.moveTo(<span class="procedure">20, 20</span>);<br>
+                                ctx.lineTo(<span class="procedure">20, 100</span>);<br>
+                                ctx.lineTo(<span class="procedure">70, 100</span>);<br>
+                                ctx.strokeStyle = "<span class="number">red</span>";<br>
+                                ctx.stroke();<br>
+                            &#60;/<span class="procedure">script</span>> <br>
+                        &#60;/<span class="procedure">body</span>><br>
+                        &#60;/<span class="procedure">html</span>><br>
+                            </code>
+                        </td>
+                        <td>
+                            <img src="img/test_canvas.png" style="width:500px;">
+                        </td>
+                    </tr>
+                </table>              
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                <h1 style="text-align: center; margin: 0;"> Упражнения</h1>
+                <a href="https://docs.google.com/document/d/1fAarB4NDpd1Q08bp07KJLuAZomtsmqe2PsHHAzRuukY/edit?usp=sharing"
+                    target="_blank" title="Открыть упражнения">
+                    <img src="img/green_eye.png" alt="Открыть Google Doc"
+                        style="width: 40px; height: 40px; vertical-align: middle; transition: transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </div>
+
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 1 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 2 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">Упражнение 3 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 4 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 5 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 6 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 7 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 8 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 9 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 10 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>             
+
+        </section>
+        
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина Александра
+    </footer>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+            
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+            
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+          
+        
+    window.onload = () => changePage('output');
+
+        function toggleSection(element) {
+            // Переключаем класс active на самом блоке-заголовке
+            element.classList.toggle('active');
+            
+            // Находим следующий соседний элемент (скрытый контент)
+            const content = element.nextElementSibling;
+            
+            // Проверяем, что следующий элемент существует и имеет класс code-content
+            if (content && content.classList.contains('code-content')) {
+                content.classList.toggle('active');
+            }
+            
+            // Меняем стрелочку
+            const arrow = element.querySelector('.arrow');
+            if (arrow) {
+                if (element.classList.contains('active')) {
+                    arrow.textContent = '▲';
+                } else {
+                    arrow.textContent = '▼';
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

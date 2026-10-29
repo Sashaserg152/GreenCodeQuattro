@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовательный портал — GreenCodeQuattro</title>
+    <link rel="stylesheet" href="Визуал.css">
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav id="main-nav">
+                <button onclick="window.location.href='Главная.html'">Главная</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Страница: Главное -->
+        <section id="page-main" class="page-section active">
+            <h1 id="page-title-main" style="opacity: 1; transition: opacity 0.5s; text-align: center;">Основа
+                алгоритмизации и
+                программирования</h1>
+            <div id="page-content-main" style="opacity: 1; transition: opacity 0.5s; text-align: center;">
+                <p>Данный ресурс является методическим конструктором для учителей информатики, которые в своей практике
+                    используют (или планируют использовать) альтернативные варианты языков программирования при обучении
+                    учащихся в VI-VII классах.</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Разделы и темы</th>
+                            <th>PascalABC</th>
+                            <th>Python</th>
+                            <th>Scratch</th>
+                            <th>JavaScript</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 6 класс. Алгоритмы и исполнители -->
+                        <tr class="toggle-header" onclick="toggleSection('robot-section')">
+                            <td colspan="5"><strong>Алгоритмы и исполнители: Черепаха</strong> ▼</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="robot-section" class="hidden-section">
+                        <tr>
+                            <td><strong>Среда программирования</strong></td>
+                            <td><a href="pascal_pascalABC.html" class="table-btn">PascalABC</a></td>
+                            <td><a href="python_IDLE.html" class="table-btn">IDLE</a></td>
+                            <td><a href="scratch_Scratch.html" class="table-btn">Scratch</a></td>
+                            <td><a href="Ndone.html" class="table-btn">Visual Code</a><br>
+                                <a href="Ndone.html" class="table-btn secondary">Notepad++</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><strong>Компьютерный исполнитель</strong></td>
+                            <td><a href="pascal_graph.html" class="table-btn">Drawman</a></td>
+                            <td><a href="python_turtle.html" class="table-btn">Turtle</a></td>
+                            <td><a href="scratch_pen.html" class="table-btn">Перо</a></td>
+                            <td><a href="js_canvas.html" class="table-btn">Canvas</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Линейные алгоритмы</strong></td>
+                            <td><a href="pascal_line.html" class="table-btn">Программа</a></td>
+                            <td><a href="python_line.html" class="table-btn">Программа</a></td>
+                            <td><a href="scratch_line.html" class="table-btn">Программа</a></td>
+                            <td><a href="Ndone.html" class="table-btn">Программа</a></td>
+                        </tr>
+                        <tr>
+                            <!-- Будет позже. Ближе к марту-->
+                            <td><strong>Вспомогательные алгоритмы</strong></td> 
+                            <td><a href="Ndone.html" class="table-btn">procedure</a></td>
+                            <td><a href="Ndone.html" class="table-btn">def</a></td>
+                            <td><a href="Ndone.html" class="table-btn">Блок Данные</a></td>
+                            <td><a href="Ndone.html" class="table-btn">function</a></td>
+                        </tr>
+
+                    </tbody><!-- 7 класс. Основные алгоритмические конструкции -->
+                    <tbody>
+                        <tr class="toggle-header" onclick="toggleSection('drawing-section')">
+                            <td colspan="5"><strong>Основные алгоритмические конструкции: Робот</strong> ▼</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="drawing-section" class="hidden-section">
+                        <tr>
+                            <td><strong>Компьютерный исполнитель</strong></td>
+                            <td>
+                                <a href="pascal_Robot.html" class="table-btn">Робот</a><br>
+                            </td>
+                            <td>
+                                <a href="python_Robot.html" class="table-btn">Робот</a><br>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Blockly</a><br>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Blockly</a><br>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Цикл с параметром</strong></td>
+                            <td>
+                                <a href="pascal_repet.html" class="table-btn">for var to do</a>
+                            </td>
+                            <td>
+                                <a href="python_repet.html" class="table-btn ">for in range</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Повторять n раз</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">for ()</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Цикл с предусловием</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">while <> do</a>
+                            </td>
+                            <td>
+                                <a href="python_loop.html" class="table-btn ">while <>:</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Повторять пока не</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">while ()</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Алгоритмическая конструкция ветвление</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">if <> then else</a>
+                            </td>
+                            <td>
+                                <a href="python_if.html" class="table-btn ">if <>: else:</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Если, то, иначе</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">if () else</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Комбинации</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Программа</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn ">Программа</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Программа</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Программа</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                    <!-- 7 класс. Типы данных -->
+                     <!-- Будет позже-->
+
+                    <tbody>
+                        <tr class="toggle-header" onclick="toggleSection('types-section')">
+                            <td colspan="5"><strong>Основные алгоритмические конструкции: Типы данных</strong> ▼</td>
+                        </tr>
+                    </tbody>
+                    <tbody id="types-section" class="hidden-section">
+                        <tr>
+                            <td><strong>Команды ввода и вывода</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Read/Readln</a><br>
+                                <a href="Ndone.html" class="table-btn secondary">Write/Writeln</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">input()</a><br>
+                                <a href="Ndone.html" class="table-btn secondary">print</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">"Ждать ответ"</a><br>
+                                <a href="Ndone.html" class="table-btn secondary">"Говорить"</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">prompt()</a><br>
+                                <a href="Ndone.html" class="table-btn secondary">document.write/alert()</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Присваивание</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">:=</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn ">=</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">"Задать значение"</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">=</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Вещественный тип данных</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Real</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn ">Float</a>
+                            </td>
+                            <td rowspan="2">
+                                <a href="Ndone.html" class="table-btn">"Операторы"</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">BegInt</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Целый тип данных</strong></td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Integer</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Int</a>
+                            </td>
+                            <td>
+                                <a href="Ndone.html" class="table-btn">Number</a>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+                <p style="text-align: center;"> Представленные на ресурсе материалы разработаны на основе официальных <a
+                        href="pascal_graph.html" class="litrecha">источников</a>:<br>в отдельных случаях, где наше
+                    мнение совпадает с мнением автора,
+                    указанные материалы непосредственно добавлялись в ресурс;<br>в других случаях они перерабатывались
+                    либо создавались непосредственно нами.<br>
+                    Ресурс предназначен для бесплатного использования.</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        © 2026 Green Code Quattro. Осинина А.В., Зенько С.И.
+    </footer>
+
+    <script>
+        function changePage(section) {
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const targetPage = document.getElementById(`page-${section}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            const activeButton = document.querySelector(`nav button[data-page="${section}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            const titleElement = targetPage?.querySelector('h1');
+            const contentElement = targetPage?.querySelector('div[id^="page-content"]');
+
+            if (titleElement && contentElement) {
+                titleElement.style.opacity = 0;
+                contentElement.style.opacity = 0;
+
+                setTimeout(() => {
+                    titleElement.style.transition = 'opacity 0.5s';
+                    contentElement.style.transition = 'opacity 0.5s';
+                    titleElement.style.opacity = 1;
+                    contentElement.style.opacity = 1;
+                }, 200);
+            }
+        }
+
+        window.onload = () => {
+            changePage('main');
+        };
+
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('active');
+
+            // Опционально: меняем стрелочку
+            const header = event.target.closest('.toggle-header');
+            const text = header.querySelector('strong').nextSibling;
+            if (section.classList.contains('active')) {
+                text.textContent = ' ▲';
+            } else {
+                text.textContent = ' ▼';
+            }
+        }
+        
+        // источники
+        document.addEventListener('DOMContentLoaded', function () {
+            const link = document.querySelector('a.litrecha');
+
+            if (link) {
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+
+                    // 1. Создаем затемненный фон (оверлей)
+                    const modalOverlay = document.createElement('div');
+                    modalOverlay.style.cssText = `
+                display: flex;
+                position: fixed;
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+
+                    // 2. Создаем само белое окно с текстом
+                    const modalContent = document.createElement('div');
+                    modalContent.style.cssText = `
+                background: #ffffff;
+                padding: 25px 30px;
+                border-radius: 12px;
+                max-width: 800px;
+                width: 100%;
+                max-height: 80vh; /* Ограничение высоты: не более 80% высоты экрана */
+                overflow-y: auto; /* Включение вертикальной прокрутки при переполнении */
+                position: relative;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+                font-family: Arial, sans-serif;
+                color: #333;
+                transform: translateY(-20px);
+                transition: transform 0.3s ease;
+            `;
+
+                    // Текст внутри окна
+                    modalContent.innerHTML = `
+                <span id="closeModalBtn" style="
+                    position: absolute; 
+                    top: 10px; 
+                    right: 15px; 
+                    font-size: 28px; 
+                    font-weight: bold; 
+                    cursor: pointer; 
+                    color: #999;
+                    line-height: 1;
+                ">&times;</span>
+                <h3 style="margin-top: 0; margin-bottom: 15px; color: #2c3e50;">Источники</h3>
+                <p style="line-height: 1.6; margin: 0; text-align: left;">
+                    Методические материалы, использованные при заполнении уроков на сайте:<br><br>
+                    1. КТП. Информатика. 6-11 классы. 2025/2026 / Лапо А.И; Пузиновская С.Г.; Климова Т.И. [и др.]. – Минск : Народная асвета, 2025. – 206 с.<br>
+                    2. Котов, В. М. Основные алгоритмические конструкции / В. М. Котов, А. И. Лапо, Е. Н. Войтехович // Информатика : учеб. пособие для 6 класса. – Минск, 2016. – 168 с. <br>
+                    3. Котов, В. М. Информатика. 7 класс / В. М. Котов, А. И. Лапо, Е. Н. Войтехович. – Минск : Народная асвета, 2017. – 176 с.<br>
+                    4. Информатика. 6 класс / В. М. Котов [и др.]. – 2-е изд. – Минск : Народная асвета, 2024. – 184 с. <br>
+                    5. Котов, В. М. Основные алгоритмические конструкции / В. М. Котов, А. И. Лапо, Е. Н. Войтехович // Информатика : учеб. пособие для 7 класса учреждений общего среднего образования с рус. яз. обучения / В. М. Котов, А. И. Лапо, Е. Н. Войтехович. – Минск, 2025. – 206 с. <br>
+                    6. УМК «Информатика». Авторы Босова Л.Л., Босова А.Ю. – Scratch-программирование : [сайт]. – URL: https://bosova.ru/metodist/authors/informatika/3/scratch.php<br>
+                    7. Быкадоров, Ю. А. Учебный компьютерный исполнитель на базе языка JavaScript и кроссбраузерной графики / Ю. А. Быкадоров // Весці БДПУ. Серыя 3, Фізіка. Матэматыка. Інфарматыка. Біялогія. Геаграфія. – 2011. – № 2. – С. 51–55. <br>
+                    8. Сайт о программировании – Canvas API : [сайт]. – URL: https://metanit.com/web/javascript/21.1.php?ysclid=mpzu6y35a6233989499 <br>
+                    9. Современный учебник JavaScript [сайт]. – URL: https://learn.javascript.ru/ .<br>
+                    10. Робот–Blockly [сайт]. – URL: https://klyaksa.net/htm/rblockly/index.htm.<br>
+                    11. Методическая инструкция по использованию [сайт]. – URL: Робот–Blockly https://kpolyakov.spb.ru/school/blockly/rob-blockly.htm#txtprog
+                </p>
+            `;
+
+                    // Собираем окно
+                    modalOverlay.appendChild(modalContent);
+                    document.body.appendChild(modalOverlay);
+
+                    // Небольшая задержка для плавной анимации появления
+                    setTimeout(() => {
+                        modalOverlay.style.opacity = '1';
+                        modalContent.style.transform = 'translateY(0)';
+                    }, 10);
+
+                    // Функция закрытия окна
+                    const closeModal = () => {
+                        modalOverlay.style.opacity = '0';
+                        modalContent.style.transform = 'translateY(-20px)';
+                        setTimeout(() => {
+                            document.body.removeChild(modalOverlay);
+                        }, 300); // Ждем окончания анимации перед удалением из DOM
+                    };
+
+                    // Закрытие по клику на крестик
+                    document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+
+                    // Закрытие по клику на затемненный фон (вне окна)
+                    modalOverlay.addEventListener('click', function (event) {
+                        if (event.target === modalOverlay) {
+                            closeModal();
+                        }
+                    });
+                    
+                    // Закрытие по клавише Esc
+                    document.addEventListener('keydown', function escapeHandler(e) {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                            document.removeEventListener('keydown', escapeHandler);
+                        }
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>

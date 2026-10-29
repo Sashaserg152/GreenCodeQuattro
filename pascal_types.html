@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Образовательный портал - Вывод</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #2E8B57;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; }
+        nav button {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            padding: 8px 16px;
+            margin-left: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        nav button:hover, nav button.active {
+            background-color: white;
+            color: #2E8B57;
+        }
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        .page-section.active { display: block; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 { color: #2E8B57; margin-bottom: 20px; font-size: 2rem; }
+        h2 { color: #2E8B57; margin: 30px 0 15px 0; font-size: 1.5rem; }
+        p { margin-bottom: 15px; font-size: 1.1rem; }
+        .code-block {
+            background-color: #f8f8f8;
+            border-left: 4px solid #2E8B57;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        .code-block pre {
+            margin: 0;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .keyword { color: #000080; font-weight: bold; }
+        .string { color: #800080; }
+        .number { color: #008080; }
+        .comment { color: #008000; font-style: italic; }
+        .procedure { color: #800000; }
+        .variable { color: #8B4513; }
+        .warning {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #2E8B57;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-direction: column; gap: 15px; }
+            nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            nav button { margin: 0; }
+            main { margin: 20px auto; }
+            h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeTrio</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык</button>
+                <button onclick="changePage('Help')">Помощь</button>
+                <button onclick="changePage('something')">Что-то</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        
+        <!-- Страница: Главная -->
+        <section id="main" class="page-section">
+            <h1>Добро пожаловать</h1>
+            <p>Выберите раздел в меню сверху, чтобы увидеть информацию.</p>
+        </section>
+
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active">
+            <h1>Вывод</h1>
+            
+            <p>Для вывода текста на экран в языке программирования PascalABC используют слово <code>Write()</code>. При вводе текста используются ковычки ' ', при необходимости вывода переменной ковычки добавлять не нужно. Например:</p>
+            
+            <div class="code-block">
+                <pre><code><span class="keyword">begin</span>
+    <span class="keyword">var</span> a := <span class="number">integer</span>;
+    <span class="procedure">Write</span>(a,b,c);
+    <span class="keyword">for var</span> i:=<span class="number">1</span> <span class="keyword">to</span> <span class="number">9</span> <span class="keyword">do</span>
+        <span class="procedure">Print</span>(i);
+<span class="keyword">end</span>.</code></pre>
+            </div>
+
+            <p>В таком случае на экран будет выводиться следующее сообщение:</p>
+            
+            <div class="code-block">
+                <pre><code><span class="keyword">begin</span>
+    <span class="keyword">var</span> (a,b) := <span class="procedure">ReadInteger2</span>;
+    <span class="procedure">Println</span>(<span class="string">$'Сумма {a} и {b} равна {a + b}'</span>);
+<span class="keyword">end</span>.</code></pre>
+            </div>
+
+            <p>Так же при необходимости ввода тексат на разных строчках используеться <code>Writeln()</code>, с помощи которой и происходит переход на новую строку.</p>
+            
+            <div class="code-block">
+                <pre><code><span class="procedure">WriteLn</span>(<span class="string">'Сумма '</span>, a <span class="string">' и '</span>, b, <span class="string">' равна '</span>, a + b);</code></pre>
+            </div>
+
+            <p>В таком случае на экран будет выводиться следующее сообщение:</p>
+            
+            <div class="code-block">
+                <pre><code><span class="keyword">begin</span>
+    <span class="keyword">var</span> (a,b) := <span class="procedure">ReadInteger2</span>;
+    <span class="procedure">Println</span>(<span class="string">$'Сумма {a} и {b} равна {a + b}'</span>);
+<span class="keyword">end</span>.</code></pre>
+            </div>
+
+        </section>
+
+        
+        <!-- Страница: Помощь -->
+        <section id="Help" class="page-section">
+            <h1>Раздел Помощь</h1>
+            <p>Здесь будет информация о сайте, контакты для связи и что-то ещё.</p>
+        </section>
+
+        <!-- Страница: Что-то -->
+        <section id="something" class="page-section">
+            <h1>что-то</h1>
+            <p>Тут будет что-то, а пока что котики</p>
+            <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Котик" style="max-width: 100%; border-radius: 10px;">
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Trio. Осинина Александра
+    </footer>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+            
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+            
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+
+        // Инициализация: открываем страницу "Вывод" при загрузке
+        window.onload = () => changePage('output');
+
+        
+    </script>
+</body>
+</html>

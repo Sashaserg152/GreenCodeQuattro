@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Раздел помощи</title>
+    <link rel="stylesheet" href="Визуал.css">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav id="main-nav">
+                <button onclick="window.location.href='Главная.html'">Главная</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Страница: Помощь -->
+        <section>
+            <h1 id="page-title-Help">Как пользоваться данным сервисом?</h1>
+            <div id="page-content-Help">
+                <p style="text-align: justify; font-size: 20px;">
+                    Добро пожаловать в справочный раздел нашего образовательного портала! 
+                    Для вашего удобства навигация по ресурсу организована двумя основными способами — через разделы <b>«Главная»</b> и <b>«Языки программирования»</b>. 
+                    Выбирайте тот, который кажется вам более удобным.<br><br>
+
+                    <b>Раздел «Главная»</b><br>
+                    Здесь представлена единая интерактивная таблица, в которой все темы уроков систематизированы по языкам программирования: PascalABC, Python, Scratch и JavaScript. 
+                    Достаточно нажать на нужную ячейку таблицы, и вы автоматически перейдёте к уроку по выбранной теме. 
+                    Этот способ отлично подходит, если вы хотите быстро найти конкретный материал или сравнить, как одна и та же тема реализуется в разных языках.<br><br>
+
+                    <b>Раздел «Языки программирования»</b><br>
+                    Если вы уже определились с языком, который хотите изучать, этот раздел для вас. 
+                    Сначала выберите интересующий вас язык программирования, после чего откроется список тем, распределённых по классам (6–7 классы) в соответствии с календарно-тематическим планированием (КТП) по информатике. 
+                    Нажимая на кнопки с названиями тем, вы будете переходить к соответствующим урокам, теоретическим материалам и практическим заданиям.<br><br>
+
+                    <i>Если у вас возникли вопросы или трудности при работе с порталом, не стесняйтесь обращаться в раздел «Контакты» — мы всегда рады помочь!</i>
+                </p>
+            </div>
+        </section>
+
+        <!-- Страница: Что-то -->
+        <section id="page-something" class="page-section">
+            <h1 id="page-title-something">что-то</h1>
+            <div id="page-content-something">
+                <p>Тут будет что-то, а пока что котики</p>
+                <img src="https://media.giphy.com/media/JIX9t2j0ZTN9S/giphy.gif" alt="Котик" class="cat-gif">
+            </div>
+        </section>
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина А.В., Зенько С.И.
+    </footer>
+
+    <script>
+        function changePage(section) {
+            document.querySelectorAll('.page-section').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            const targetPage = document.getElementById(`page-${section}`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            const activeButton = document.querySelector(`nav button[data-page="${section}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            const titleElement = targetPage?.querySelector('h1');
+            const contentElement = targetPage?.querySelector('div[id^="page-content"]');
+
+            if (titleElement && contentElement) {
+                titleElement.style.opacity = 0;
+                contentElement.style.opacity = 0;
+
+                setTimeout(() => {
+                    titleElement.style.transition = 'opacity 0.5s';
+                    contentElement.style.transition = 'opacity 0.5s';
+                    titleElement.style.opacity = 1;
+                    contentElement.style.opacity = 1;
+                }, 200);
+            }
+        }
+
+        window.onload = () => {
+            changePage('main');
+        };
+
+        function toggleSection(sectionId) {
+    const section = document.getElementById(sectionId);
+    section.classList.toggle('active');
+    
+    // Опционально: меняем стрелочку
+    const header = event.target.closest('.toggle-header');
+    const text = header.querySelector('strong').nextSibling;
+    if (section.classList.contains('active')) {
+        text.textContent = ' ▲';
+    } else {
+        text.textContent = ' ▼';
+    }
+}
+    </script>
+</body>
+</html>

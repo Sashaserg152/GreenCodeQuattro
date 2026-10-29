@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Линейный алгаритм</title>
+    <link rel="stylesheet" href="Визуал.css">
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active">
+            <h1>Алгоритмическая конструкция <b><i>ветвление</i></b></h1>
+            <p><i>Алгоритм</i> — понятная и конечная последовательность точных действий (команд), формальное выполнение
+                которых позволяет получить решение поставленной задачи. <i>Команда</i> в алгоритме — указание на
+                выполнение конкретного действия.<br>
+                Человеку также регулярно приходится выполнять действия, в зависимости от предыдущих обстоятельств. Если
+                пойдёт дождь, то возьму зонт, если не пойдёт, то не возьму.
+                Если дома нету молока, то в магазине возьму молока, если есть, то пойдё дальше по списку продуктов и др.
+
+                В программировании такие алгоритмы часто используют для проверки условия и исключения заведомо неверных
+                решений задания.<br>
+            </p>
+            <img src="https://avatars.mds.yandex.net/i?id=2a0000017a17220d84817242af8a066a6117-5147303-images-thumbs&n=13"
+                alt="Среда обитания исполнителя Чертёжник." style="float: right; margin-left: 5px; width:36%;">
+            <p><b>Алгоритмическая конструкция ветвление</b> обеспечивает выполнение одной или другой
+                последовательности команд в зависимости от истинности или ложности некоторого условия.
+                Алгоритмическая конструкция может быть в полной и неполной форме, и может изображаться на блок-схеме
+                следующим образом:</p>
+            <p>В качестве условий могут использоваться команды связанные с наличием или отстутсвием стен на поле среды
+                Робот,
+                или с наличием, или отсутствием закрашеной облости. Данные команды представлены на таблице:<br>
+                <img src="img\table_Robot_Python_2.png" style="float: right; margin-right: 10px; width: 25%">
+                Однако иногда для решения задания необходимо обратное, комбенированное или исключающее условие, которое
+                нельзя записать с использованием числых условий.
+                Для формирования грамотного условия для алгоретмической конструкции, а так же для дальнейшей с языком
+                программирования Python
+                можно использовать логические операторы: НЕ, И, ИЛИ. Запись который представленна следующим образом:<br>
+                <img src="img\table_Robot_Python_3.png" style="width: 25%">
+            </p>
+
+            <p>При создании алгоритма рекомендуется следовать определённой последовательности:<br><b>
+                    1) Словесное решение задачи;<br>
+                    2) Построение блок-схемы решения задачи;<br>
+                    3) Написание псевдо-кода программы;<br>
+                    4) Запись алгоритма на языке программирования.<br></b>
+            </p>
+            <p> Рассмотрим построение ветвления на примере решения задачи коспьютерного исполнителя Робот.</p>
+
+
+            <div class="code-block">
+                <table style="font-size:medium;">
+                    <tr>
+                        <td style="text-align: center; width: 25%;">
+                            Псевдо-код
+                        </td>
+                        <td style="text-align: center;">
+                            Блок-схема
+                        </td>
+                        <td style="text-align: center; width: 20%;">
+                            Программа
+                        </td>
+                        <td style="text-align: center;">
+                            Поле программы
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left;">
+                            &#9658; НАЧАЛО<br>
+                            &#9658; Подключить модуль robot<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Если КЛЕТКА ЗАКРАШЕНА:<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Закрасить клетку<br>
+                            &#9658; КОНЕЦ
+                        </td>
+                        <td style="text-align: justify; width: 20%">
+                            <img src="img\Block_Python_4.png" style="width: 100%">
+                        </td>
+                        <td style="text-align:left;">
+                            <code>
+                            <span class="keyword">from</span> robot <span class="keyword">import</span> *<br><br>
+                            <span class="keyword">if</span> is_cell_painted():<br>
+                            &nbsp;&nbsp;move_right()<br>
+                            &nbsp;&nbsp;move_down()<br>
+                            &nbsp;&nbsp;move_left()<br>
+                            &nbsp;&nbsp;paint()<br>
+                            </code>
+                        </td>
+                        <td style="text-align: center;">
+                            <img src="img\test_if_1.png" style="width: 90%"><br>
+                            <img src="img\test_if_2.png" style="width: 90%">
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+
+            <p>Для решения любой задачи в программировании необходимо сначало составить его в по действиям, после при
+                необходимости составить словесную или визуальную схему и записать саму программу. Данные действия
+                обязательны для начинающих программистов, в дальнейшем вы сможите решать задачи путём записи его
+                на языке программирования, без использования других представлений.
+            </p>
+            </div>
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                <h1 style="text-align: center; margin: 0;"> Упражнения</h1>
+                <a href="https://docs.google.com/document/d/1fAarB4NDpd1Q08bp07KJLuAZomtsmqe2PsHHAzRuukY/edit?usp=sharing"
+                    target="_blank" title="Открыть упражнения">
+                    <img src="img/green_eye.png" alt="Открыть Google Doc"
+                        style="width: 40px; height: 40px; vertical-align: middle; transition: transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </div>
+
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 1 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Проанализируете задание, код-решение и изображение-решение. Найдите
+                    отличие между изображением, кодом и условием и ответьте на вопросы
+                    «да» или «нет»:<br>
+                    1. Соответствует ли код программы условию задания?<br>
+                    2. Соответствует ли рисунок условию задания?<br>
+                    3. Соответствует ли рисунок коду программы?</p>
+                <img src="img/Lessons/Pascal_Drawman_Les1.png" style="width: 100%;">
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 2 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Проанализируете задание и изображение-решение. Найдите отличие между изображением и условием.
+                    Соответствует ли рисунок условию задания? («да» или «нет»).</p>
+                <img src="img/Lessons/Pascal_Drawman_Les2.png" style="width: 100%;">
+
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">Упражнение 3 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Составьте условие к программе с представленным кодом решением для и изображением фигуры.</p>
+                <img src="img/Lessons/Pascal_Drawman_Les3.png" style="width: 80%;">
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 4 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 5 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 6 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Составьте программу для построения изображения треугольника, соответствующего условию:<br>
+                    «Изобразите фигуру на холсте размером 4×6 по точкам (1;1), (1;5), (3;5), (3;1), (1;1)»</p>
+                <img src="img/Lessons/Pascal_Drawman_Les4.png" style="width: 20%;">
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 7 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Составьте программу для построения изображения треугольника, соответствующего условию:<br>
+                    «Изобразите треугольник на холсте размером 10×5 по точкам (1;1), (6;4), (9;1); (1;1)»</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 8 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 9 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 10 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Составьте программу для построения изображения</p>
+                <img src="img/Lessons/Pascal_Drawman_Les6.png" style="width: 40%;">
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина Александра
+    </footer>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+
+
+        window.onload = () => changePage('output');
+
+        function toggleSection(element) {
+            // Переключаем класс active на самом блоке-заголовке
+            element.classList.toggle('active');
+
+            // Находим следующий соседний элемент (скрытый контент)
+            const content = element.nextElementSibling;
+
+            // Проверяем, что следующий элемент существует и имеет класс code-content
+            if (content && content.classList.contains('code-content')) {
+                content.classList.toggle('active');
+            }
+
+            // Меняем стрелочку
+            const arrow = element.querySelector('.arrow');
+            if (arrow) {
+                if (element.classList.contains('active')) {
+                    arrow.textContent = '▲';
+                } else {
+                    arrow.textContent = '▼';
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

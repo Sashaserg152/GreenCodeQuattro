@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютерный исполнитель - GraphABC</title>
+    <link rel="stylesheet" href="Визуал.css">
+
+    <!-- Стили для увеличения изображений (встроены, чтобы не создавать отдельный файл) -->
+    <style>
+        .image-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            /* Поверх всех элементов */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Тёмный полупрозрачный фон */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            /* Сохраняет пропорции изображения */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active">
+            <h1>Среда исполнителя <b><i>Робот</i></b></h1>
+            <img src="img/Robot_interf_Python.PNG"
+                style="float: right; margin-right: 15px; margin-bottom: 10px; width: 27%;">
+            <p> В среде программирования Python, кроме исполнителя Черепашка, можно подключить исполнителя Робот.</p>
+
+            <p>Средой обитания исполнителя Робот является прямоугольное клетчатое поле. Между некоторыми клетками, а
+                также по периметру поля находятся стены.
+                Серое кольцо обозначает начальное положение Робота, чёрная точка — конечное. Робот может передвигаться
+                по полю и закрашивать указанные клетки. В заданиях из встроенного задачника Робота закрашенные клетки
+                помечены
+                серо-голубым цветом, те клетки, которые Робот должен закрасить, — светло-жёлтым<br>
+                Для подключения исполнителя Робот в программе прописывается команда <i>from pyrob.api import*</i>.
+                Готовые задания с обстановками для Робота хранятся в задачнике и вызываются командой @task.<br></p>
+            Система команд исполнителя:<br></p>
+            <img src="img/table_Robot_Python.PNG"
+                style="float: left; margin-right: 15px; margin-bottom: 10px; width: 30%;">
+            <p>Для изучения данной среды можно использовать альтернативные интернет сервисы повторяющие структуру и
+                систему команд Робота:
+                <a href="https://robot.stepindev.com/index_ru.html">1</a> и <a href="https://stepindev.com/ru/">2</a>
+            </p>
+            <p>Команды при наборе можно выбирать из выпадающего списка. Для этого достаточно набрать
+                первые буквы команды и нажать Ctrl + пробел<br>
+                Робот может становиться на обычную и на закрашенную клетку, но не может переместиться с клетки на
+                клетку, если междуними стена. Робот не может переместиться за границы поля. Эти действия вызывают
+                ошибку. Робот может
+                закрасить уже закрашенную клетку. Такое действие ошибку не вызывает. Если задача решена верно, кольцо, изображающее Робота,
+                окрашиваеся в зелёный цвет.<br></p>
+            <p>Рассмотрим пример решения программы prim_12_1</p>
+
+            <div class="code-block">
+                <table>
+                    <tr>
+                        <td style="text-align: justify; width:70%;">
+                            Поле:
+                        </td>
+                        <td style="text-align: justify;">
+                            Код:
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <img src="img/cord_robot_Python.png" style="width:100%;">
+                        </td>
+                        <td style="width:80%; text-align: justify; font-size: 20px;">
+                            <code>
+                                <span class="procedure">from</span> pyrob.api <span class="procedure">import</span> *<br><br>
+                                @task<br>
+                                <span class="procedure">def</span> <span class="keyword">prim_12_1</span>():<br>
+                                move_right(4)<br>
+                                move_up()<br>
+                                move_left(2)<br>
+                                fill_cell()<br>
+                                move_left()<br>
+                                fill_cell()<br>
+                                move_left(2)<br><br>
+                                run_tasks()</code>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                <h1 style="text-align: center; margin: 0;"> Упражнения</h1>
+                <a href="https://docs.google.com/document/d/1fAarB4NDpd1Q08bp07KJLuAZomtsmqe2PsHHAzRuukY/edit?usp=sharing"
+                    target="_blank" title="Открыть упражнения">
+                    <img src="img/green_eye.png" alt="Открыть Google Doc"
+                        style="width: 40px; height: 40px; vertical-align: middle; transition: transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </div>
+
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 1 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 2 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">Упражнение 3 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 4 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 5 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина Александра
+    </footer>
+
+    <!-- Модальное окно для увеличения изображений (встроено перед закрытием body) -->
+    <div id="image-overlay" class="image-overlay">
+        <img id="overlay-img" src="" alt="Увеличенное изображение">
+    </div>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+
+        window.onload = () => changePage('output');
+
+        function toggleSection(element) {
+            // Переключаем класс active на самом блоке-заголовке
+            element.classList.toggle('active');
+
+            // Находим следующий соседний элемент (скрытый контент)
+            const content = element.nextElementSibling;
+
+            // Проверяем, что следующий элемент существует и имеет класс code-content
+            if (content && content.classList.contains('code-content')) {
+                content.classList.toggle('active');
+            }
+
+            // Меняем стрелочку
+            const arrow = element.querySelector('.arrow');
+            if (arrow) {
+                if (element.classList.contains('active')) {
+                    arrow.textContent = '▲';
+                } else {
+                    arrow.textContent = '▼';
+                }
+            }
+        }
+
+        // ==========================================
+        // ЛОГИКА УВЕЛИЧЕНИЯ ИЗОБРАЖЕНИЙ (НОВОЕ)
+        // ==========================================
+        const overlay = document.getElementById('image-overlay');
+        const overlayImg = document.getElementById('overlay-img');
+        const zoomableImages = document.querySelectorAll('.zoomable');
+
+        // Открытие окна при клике на картинку
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation(); // Предотвращаем всплытие клика
+                overlayImg.src = img.src; // Передаём путь к картинке
+                overlay.classList.add('active'); // Показываем окно
+            });
+        });
+
+        // Закрытие окна при клике на тёмный фон
+        overlay.addEventListener('click', () => {
+            closeOverlay();
+        });
+
+        // Закрытие окна по клавише Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                closeOverlay();
+            }
+        });
+
+        // Функция закрытия
+        function closeOverlay() {
+            overlay.classList.remove('active');
+            // Очищаем src с небольшой задержкой, чтобы гифка перестала грузить память после исчезновения
+            setTimeout(() => {
+                overlayImg.src = '';
+            }, 200);
+        }
+    </script>
+</body>
+
+</html>

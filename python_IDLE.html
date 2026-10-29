@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Компьютерный исполнитель - GraphABC</title>
+    <link rel="stylesheet" href="Визуал.css">
+
+    <!-- Стили для увеличения изображений (встроены, чтобы не создавать отдельный файл) -->
+    <style>
+        .image-overlay {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            /* Поверх всех элементов */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            /* Тёмный полупрозрачный фон */
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            animation: fadeIn 0.2s ease-in-out;
+        }
+
+        .image-overlay.active {
+            display: flex;
+        }
+
+        .image-overlay img {
+            max-width: 95%;
+            max-height: 95%;
+            object-fit: contain;
+            /* Сохраняет пропорции изображения */
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            border-radius: 4px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <div class="logo">GreenCodeQuattro</div>
+            <nav>
+                <button onclick="window.location.href='Главная.html'" data-page="main">Главное</button>
+                <button onclick="window.location.href='Языки.html'">Язык программирования</button>
+                <button onclick="window.location.href='Help.html'">Помощь</button>
+                <button onclick="window.location.href='Контакты.html'">Контакты</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+
+        <!-- Страница: Вывод (активная по умолчанию) -->
+        <section id="output" class="page-section active">
+            <h1>Среда программирования <b><i>IDLE</i></b></h1>
+            <img src="https://i.ytimg.com/vi/_l2EjonWMco/maxresdefault.jpg" alt="Среда программирования PascalABC"
+                style="float: left; margin-right: 15px; margin-bottom: 10px; width: 48%;">
+
+
+            <p><b>Среда программирования</b> — комплекс программ, используемых при разработке других программного
+                обеспечения.</p>
+            <p> Для разработки программ используются среды программирования (Интегрированные Среды Разработки - ИСР,
+                англ. IDE, Integrated Development Environment).</p>
+            <p>Для работы с языком программирования Python можно использовать среды программирования:<br>
+                &bull; <a href="https://www.python.org/downloads/" style="text-decoration: none; color: black;">среда
+                    IDLE устанавливается вместе с языком Python</a>;<br>
+                &bull; <a href="https://www.jetbrains.com/ru-ru/pycharm/download/other/"
+                    style="text-decoration: none; color: black;">среда PyCharm</a>;<br>
+                &bull; <a href="https://metaschool.ru/pub/konkurs/python/turtle/index.php"
+                    style="text-decoration: none; color: black;">онлайн-среды программирования.</a><br>
+                &bull; <a href="https://stepindev.com/ru/courses/a5567d41-5d09-4044-8f88-c64ca876b61b"
+                    style="text-decoration: none; color: black;">онлайн-ресурс с уроками.</a></p>
+            <p>При нажатии на иконку среды, открывается рабочая область которая включает в себя 2 раздела: панель
+                управления (сверху), область для написания кода.<br>
+                В панели управления находятся разделы File (Файл), Edit (Правка), Shell (Вид), Debug (Отладка), Options
+                (Настройки), Window (Окно), Help (Помощь). С помощью панели <b>File</b> можно сохранять и открывать
+                файлы. При необходимости можно обратиться к
+                справочной системе через меню <b>Help</b>.<br>
+                В среду программирования входят: редактор текстов, справочная система, исполнитель <i>Черепаха</i> и др.
+                На странице Search page/Страница поиска можно найти интересующую информацию. Примеры можно скопировать в
+                среду программирования и там же выполнить. Перевод на русский язык доступен в браузере из контекстного
+                меню.
+            </p>
+
+            <div class="code-block" style="width: 33%; display: inline-block; text-align: center;">
+                <h3>Создать новый файл</h3>
+                <img src="img\OC/Python_New.gif" class="zoomable" style="width: 100%; cursor: pointer;"
+                    alt="Создать новый файл">
+            </div>
+            <div class="code-block" style="width: 33%; display: inline-block; text-align: center;">
+                <h3>Открыть файл</h3>
+                <img src="img\OC/Python_Open.gif" class="zoomable" style="width: 100%; cursor: pointer;"
+                    alt="Открыть файл">
+            </div>
+            <div class="code-block" style="width: 33%; display: inline-block; text-align: center;">
+                <h3>Сохранение программы</h3>
+                <img src="img\OC/Python_Save.gif" class="zoomable" style="width: 100%; cursor: pointer;"
+                    alt="Запустить программу">
+            </div>
+            <div class="code-block" style="width: 40%; display: inline-block; text-align: center; margin-left: 30%;">
+                <h3>Запустить программу</h3>
+                <img src="img\OC/Python_Start.gif" class="zoomable" style="width: 100%; cursor: pointer;"
+                    alt="Запустить программу">
+            </div>
+
+
+
+            <p>Документация по языку Python (команда Python Docs F1) открывается в браузере. Документация предлагается
+                на английском языке. Перевести на русский язык можно, используя контекстное меню (команда Перевести на
+                русский).</p>
+
+
+            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin: 20px 0;">
+                <h1 style="text-align: center; margin: 0;"> Упражнения</h1>
+                <a href="https://docs.google.com/document/d/1fAarB4NDpd1Q08bp07KJLuAZomtsmqe2PsHHAzRuukY/edit?usp=sharing"
+                    target="_blank" title="Открыть упражнения">
+                    <img src="img/green_eye.png" alt="Открыть Google Doc"
+                        style="width: 40px; height: 40px; vertical-align: middle; transition: transform 0.2s;"
+                        onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1)'">
+                </a>
+            </div>
+
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 1 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 2 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">Упражнение 3 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 4 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+            <div class="code-block" onclick="toggleSection(this)">
+                Упражнение 5 <span class="arrow">▼</span>
+            </div>
+            <div class="code-content">
+                <p>Будет позже</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer>
+        &copy; 2026 Green Code Quattro. Осинина Александра
+    </footer>
+
+    <!-- Модальное окно для увеличения изображений (встроено перед закрытием body) -->
+    <div id="image-overlay" class="image-overlay">
+        <img id="overlay-img" src="" alt="Увеличенное изображение">
+    </div>
+
+    <script>
+        function changePage(pageId) {
+            // Убираем активный класс со всех кнопок и страниц
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.page-section').forEach(section => section.classList.remove('active'));
+
+            // Добавляем активный класс к нужной кнопке и странице
+            const btn = document.querySelector(`nav button[data-page="${pageId}"]`);
+            if (btn) btn.classList.add('active');
+
+            const section = document.getElementById(pageId);
+            if (section) section.classList.add('active');
+        }
+
+        window.onload = () => changePage('output');
+
+        function toggleSection(element) {
+            // Переключаем класс active на самом блоке-заголовке
+            element.classList.toggle('active');
+
+            // Находим следующий соседний элемент (скрытый контент)
+            const content = element.nextElementSibling;
+
+            // Проверяем, что следующий элемент существует и имеет класс code-content
+            if (content && content.classList.contains('code-content')) {
+                content.classList.toggle('active');
+            }
+
+            // Меняем стрелочку
+            const arrow = element.querySelector('.arrow');
+            if (arrow) {
+                if (element.classList.contains('active')) {
+                    arrow.textContent = '▲';
+                } else {
+                    arrow.textContent = '▼';
+                }
+            }
+        }
+
+        // ==========================================
+        // ЛОГИКА УВЕЛИЧЕНИЯ ИЗОБРАЖЕНИЙ (НОВОЕ)
+        // ==========================================
+        const overlay = document.getElementById('image-overlay');
+        const overlayImg = document.getElementById('overlay-img');
+        const zoomableImages = document.querySelectorAll('.zoomable');
+
+        // Открытие окна при клике на картинку
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', (e) => {
+                e.stopPropagation(); // Предотвращаем всплытие клика
+                overlayImg.src = img.src; // Передаём путь к картинке
+                overlay.classList.add('active'); // Показываем окно
+            });
+        });
+
+        // Закрытие окна при клике на тёмный фон
+        overlay.addEventListener('click', () => {
+            closeOverlay();
+        });
+
+        // Закрытие окна по клавише Escape
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) {
+                closeOverlay();
+            }
+        });
+
+        // Функция закрытия
+        function closeOverlay() {
+            overlay.classList.remove('active');
+            // Очищаем src с небольшой задержкой, чтобы гифка перестала грузить память после исчезновения
+            setTimeout(() => {
+                overlayImg.src = '';
+            }, 200);
+        }
+    </script>
+</body>
+
+</html>
