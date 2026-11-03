@@ -11,7 +11,7 @@
 3. Во вкладке **Actions** открыть **Deploy static site to GitHub Pages** и нажать **Run workflow**, выбрав ветку `main`, если публикация ещё не запустилась автоматически.
 
 В дальнейшем сайт публикуется автоматически при каждом push в `main`. Для pull request публикация не запускается.
-Workflow загружает только HTML, CSS и каталог `img`, без служебных файлов репозитория.
+Workflow загружает только HTML, CSS, JavaScript и каталог `img`, без служебных файлов репозитория.
 
 Адрес сайта после успешной публикации:
 <https://sashaserg152.github.io/GreenCodeQuattro/>.

@@ -7,48 +7,7 @@
     <title>Компьютерный исполнитель - GraphABC</title>
     <link rel="stylesheet" href="Визуал.css">
 
-    <!-- Стили для увеличения изображений (встроены, чтобы не создавать отдельный файл) -->
-    <style>
-        .image-overlay {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            /* Поверх всех элементов */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            /* Тёмный полупрозрачный фон */
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            animation: fadeIn 0.2s ease-in-out;
-        }
-
-        .image-overlay.active {
-            display: flex;
-        }
-
-        .image-overlay img {
-            max-width: 95%;
-            max-height: 95%;
-            object-fit: contain;
-            /* Сохраняет пропорции изображения */
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-            border-radius: 4px;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
+    <script src="image-zoom.js" defer></script>
 </head>
 
 <body>
@@ -174,10 +133,6 @@
         &copy; 2026 Green Code Quattro. Осинина Александра
     </footer>
 
-    <!-- Модальное окно для увеличения изображений (встроено перед закрытием body) -->
-    <div id="image-overlay" class="image-overlay">
-        <img id="overlay-img" src="" alt="Увеличенное изображение">
-    </div>
 
     <script>
         function changePage(pageId) {
@@ -218,42 +173,6 @@
             }
         }
 
-        // ==========================================
-        // ЛОГИКА УВЕЛИЧЕНИЯ ИЗОБРАЖЕНИЙ (НОВОЕ)
-        // ==========================================
-        const overlay = document.getElementById('image-overlay');
-        const overlayImg = document.getElementById('overlay-img');
-        const zoomableImages = document.querySelectorAll('.zoomable');
-
-        // Открытие окна при клике на картинку
-        zoomableImages.forEach(img => {
-            img.addEventListener('click', (e) => {
-                e.stopPropagation(); // Предотвращаем всплытие клика
-                overlayImg.src = img.src; // Передаём путь к картинке
-                overlay.classList.add('active'); // Показываем окно
-            });
-        });
-
-        // Закрытие окна при клике на тёмный фон
-        overlay.addEventListener('click', () => {
-            closeOverlay();
-        });
-
-        // Закрытие окна по клавише Escape
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && overlay.classList.contains('active')) {
-                closeOverlay();
-            }
-        });
-
-        // Функция закрытия
-        function closeOverlay() {
-            overlay.classList.remove('active');
-            // Очищаем src с небольшой задержкой, чтобы гифка перестала грузить память после исчезновения
-            setTimeout(() => {
-                overlayImg.src = '';
-            }, 200);
-        }
     </script>
 </body>
 
