@@ -66,90 +66,46 @@
             <p>Алгоритм с известным числом повторений необходим для предотвращения записи однатипных команд и экономию места.
                 Это сделано для того, чтобы не переписывать код по несколько раз для каждого шага.
                 Рассмотрим построение цикла с известным числом повторения на примере решения задачи коспьютерного исполнителя Робот.</p>
-                <img src="img/Block_Python_2.1.png">
+                <img src="img\Block_Python_2.1.png">
 
 
             <div class="code-block">
                 <table style="font-size: small;">
                     <tr>
-                        <td style="text-align: justify; width: 20%; text-align: center;">
-                            Словесное решение задачи
-                        </td>
-                        <td style="text-align: justify; width: 15%;text-align: center;">
-                            Блок-схема
-                        </td>
-                        <td style="text-align: justify; width: 40%;text-align: center;">
+                        <td style="text-align: center;">
                             Псевдо-код
                         </td>
-                        <td style="text-align: justify; width: 20%;text-align: center;">
+                        <td style="text-align: center;">
+                            Блок-схема
+                        </td>
+                        <td style="text-align: center;">
                             Программа
                         </td>
 
                     </tr>
                     <tr>
-                        <td style="text-align: justify;">
-                            1) Выбираем зелёный цвет<br>
-                            2) Три треугольника:<br>
-                            2.1) Рисуем Первую линию<br>
-                            2.2) Рисуем вторую линию<br>
-                            2.3) рисуем третью линию<br>
-                            3) Выбираем коричневый<br>
-                            4) Рисуем палочку
-                        </td>
 
-                        <td style="text-align: justify;">
-                            <img src="img/Block_Python_2.png" style="width: 100%">
-                        </td>
-
-                        <td style="text-align: justify; font-family: courier;">
+                        <td style="text-align: justify; font-family: courier; width: 30%;">
                             &#9658; НАЧАЛО<br>
-                            &#9658; Подключить графический модуль turtle<br>
-                            &#9658; Установить цвет пера: Зелёный<br>
-                            &#9658; ПОВТОРИТЬ 3 раза:<br>
-                            &#9658; Вперёд на 50 шагов (первая линия треугольника)<br>
-                            &#9658; Повернуть налево на 120 градусов<br>
-                            &#9658; Вперёд на 50 шагов (вторая линия треугольника)<br>
-                            &#9658; Повернуть налево на 120 градусов<br>
-                            &#9658; Вперёд на 50 шагов (третья линия треугольника)<br>
-                            &#9658; Повернуть налево на 120 градусов (возврат направления)<br>
-                            &#9658; Поднять перо<br>
-                            &#9658; Повернуть направо на 90 градусов<br>
-                            &#9658; Вперёд на 40 шагов (смещение вниз)<br>
-                            &#9658; Повернуть налево на 90 градусов (возврат направления)<br>
-                            &#9658; Опустить перо<br>
-                            &#9658; Закончить повторенние<br>
-                            &#9658; Поднять перо<br>
-                            &#9658; Установить цвет пера: Коричневый<br>
-                            &#9658; Вперёд на 25 шагов (смещение к центру ствола)<br>
-                            &#9658; Повернуть налево на 90 градусов (поворот вниз)<br>
-                            &#9658; Опустить перо<br>
-                            &#9658; Вперёд на 40 шагов (рисуем ствол-палочку)<br>
-                            &#9658; КОНЕЦ<br>
+                            &#9658; Подключить модуль robot<br>
+                            &#9658; Повтарить 5 раз:<br>
+                            &#9658; Идти на 1 шаг направо<br>
+                            &#9658; Закрасить блок<br>
+                            &#9658; КОНЕЦ
                         </td>
+
+                        <td style="width: 20%;">
+                            <img src="img\Block_Python_2.PNG" style="width: 100%">
+                        </td>
+
 
                         <td style="width:80%; text-align: justify; font-size: medium;">
-                            <code><b><span class="keyword">import</span> turtle</b>;<br>
-                                turtle.shape(<span class="procedure">'turtle'</span>)<br>
-                                turtle.color(<span class="procedure">"green"</span>)<br>
-                                   <span class="string">for</span> i <span class="string">in</span> <span class="keyword">
-                                    range</span>(<span class="number">3</span>):<br>
-                                &nbsp;turtle.forward(<span class="number">50</span>)<br>
-                                  &nbsp;&nbsp;turtle.left(<span class="number">120</span>)<br>
-                                  &nbsp;&nbsp;turtle.forward(<span class="number">50</span>)<br>
-                                  &nbsp;&nbsp;turtle.left(<span class="number">120</span>)<br>
-                                   &nbsp;&nbsp;turtle.forward(<span class="number">50</span>)<br>
-                                  &nbsp;&nbsp;turtle.left(<span class="number">120</span>)<br>
-                                  &nbsp;&nbsp;turtle.penup()<br>
-                                  &nbsp;&nbsp;turtle.right(<span class="number">90</span>)<br>
-                                  &nbsp;&nbsp;turtle.forward(<span class="number">40</span>)<br>
-                                   &nbsp;&nbsp;turtle.left(<span class="number">90</span>)<br>
-                                  &nbsp;&nbsp;turtle.pendown()<br>
-                                turtle.penup()<br>
-                                turtle.color(<span class="procedure">"brown"</span>)<br>
-                                turtle.forward(<span class="number">25</span>)<br>
-                                turtle.left(<span class="number">90</span>)<br>
-                                turtle.pendown()<br>
-                                turtle.forward(<span class="number">40</span>)<br>
+                            <code>
+                            <span class="keyword">from</span> robot <span class="keyword">import</span> *<br><br>
+                            <span class="keyword">for</span> i <span class="keyword">in</span> range(5):<br>
+                            &nbsp;&nbsp;move_right()<br>
+                            &nbsp;&nbsp;paint()
+                            </code>
                         </td>
                     </tr>
                 </table>
@@ -168,9 +124,9 @@
         </td>
     </tr>
     <tr>
-        <td><img src="img/Block_Python_2.2.png" style="width: 100%;"></td>
-        <td><img src="img/Block_Python_2.png" style="width: 100%;"></td>
-        <td><img src="img/Block_Python_2.1.png" style="width: 100%;"></td>
+        <td style="width: 10%;"><img src="img\Block_Python_2.2.PNG"></td>
+        <td style="width: 20%;"><img src="img\Block_Python_2.PNG"></td>
+        <td style="width: 60%;"><img src="img\Block_Python_2.3.png"></td>
     </tr>
 </table>
             </table>
