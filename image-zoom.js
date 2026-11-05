@@ -30,6 +30,7 @@
     // Capture the click before links and expandable exercise headers handle it.
     document.addEventListener('click', (event) => {
         if (!(event.target instanceof HTMLImageElement) || dialog.contains(event.target)) return;
+        if (event.target.closest('[data-no-zoom], .logo, .lang-icon, .icon, header, nav')) return;
         event.preventDefault();
         event.stopPropagation();
         openImage(event.target);

@@ -3,6 +3,16 @@ img {
     cursor: zoom-in;
 }
 
+img:is([data-no-zoom], .logo, .lang-icon, .icon),
+:is([data-no-zoom], .logo, .lang-icon, .icon, header, nav) img {
+    cursor: inherit;
+}
+
+a img[data-no-zoom],
+button img[data-no-zoom] {
+    cursor: pointer;
+}
+
 .image-zoom {
     position: fixed;
     inset: 0;
